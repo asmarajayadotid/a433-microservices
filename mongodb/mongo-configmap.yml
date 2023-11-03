@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mongo-config
+data:
+  # konfigurasi file untuk mongodb
+  mongo.conf: |
+    storage:
+      dbPath: /data/db
