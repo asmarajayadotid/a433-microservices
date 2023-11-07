@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-deployment
+  labels:
+    app: order
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: order
+  template:
+    metadata:
+      labels:
+        app: order
+    spec:
+      containers:
+      - name: order
+        image: ghcr.io/asmarajayadotid/order-service:latest
+        ports:
+          - containerPort: 3000
+        env:
+          - name: PORT
+            value: "3000"
+          - name: AMQP_URL
+            value: "amqp://rabbitmq-service:5672"
