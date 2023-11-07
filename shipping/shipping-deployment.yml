@@ -23,4 +23,4 @@ spec:
           - name: PORT
             value: "3001"
           - name: AMQP_URL
-            value: "amqp://rabbitmq-service:5672"
+            value: "amqp://asmarajayadotid:dicoding@rabbitmq-service:5672"
